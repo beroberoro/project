@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: const Color(0xA89D84FF).withOpacity(0.3),
+            backgroundColor: const Color(0xA82949FA).withOpacity(0.8),
             centerTitle: true,
             title: const Text(
               "X-Ray Viewer",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Color(0xFF600ACD),
+                color: Color(0xFF00187A),
               ),
             ),
             bottom: const TabBar(
@@ -42,8 +42,8 @@ class MyApp extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  const Color(0xFF5D4AFF).withOpacity(0.6),
-                  Colors.white.withOpacity(0.9),
+                  const Color(0xFF1234EA).withOpacity(0.7),
+                  Color(0xFF1234EA).withOpacity(0.3),
                 ],
               ),
             ),
