@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: const Color(0xFF7B61FF).withOpacity(0.3),
+            backgroundColor: const Color(0xA89D84FF).withOpacity(0.3),
             centerTitle: true,
             title: const Text(
               "X-Ray Viewer",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Color(0xFF6A5ACD),
+                color: Color(0xFF600ACD),
               ),
             ),
             bottom: const TabBar(
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  const Color(0xFF6A5ACD).withOpacity(0.6),
+                  const Color(0xFF5D4AFF).withOpacity(0.6),
                   Colors.white.withOpacity(0.9),
                 ],
               ),
@@ -60,8 +60,8 @@ class MyApp extends StatelessWidget {
                       buildCategoryCard(Icons.water_drop, "Glucose Test", Colors.white, context, MedicalTestPage(title: "Glucose Test")),
                       buildCategoryCard(Icons.pregnant_woman, "Pregnancy Test", Colors.pinkAccent, context, MedicalTestPage(title: "Pregnancy Test")),
                       buildCategoryCard(Icons.vaccines, "Drug Test", Colors.white, context, MedicalTestPage(title: "Drug Test")),
-                      buildCategoryCard(Icons.water_drop, "Urinalysis", Colors.yellowAccent , context, MedicalTestPage(title: "Urinalysis")),
-                      buildCategoryCard(Icons.water_drop, "Kidney Function Test", Color(0xFFFCE77D), context, MedicalTestPage(title: "Kidney Function Test")),
+                      buildCategoryCard(Icons.water_drop, "Urinalysis", Color(0xFFDDD7AE) , context, MedicalTestPage(title: "Urinalysis")),
+                      buildCategoryCard(Icons.water_drop, "Kidney Function Test", Color(0xFFDDD7AE), context, MedicalTestPage(title: "Kidney Function Test")),
                     ],
                   ),
                   GridView.count(
