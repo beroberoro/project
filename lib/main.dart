@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: const Color(0xFF7B61FF).withOpacity(0.3), // جعل الشفافية أعلى قليلاً
+            backgroundColor: const Color(0xFF7B61FF).withOpacity(0.3),
             centerTitle: true,
             title: const Text(
               "X-Ray Viewer",
@@ -37,45 +37,33 @@ class MyApp extends StatelessWidget {
             ),
           ),
           body: Container(
-            // ✅ إضافة تدرج لوني من اللون الأزرق إلى الأبيض
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topCenter, // من الأعلى
-                end: Alignment.bottomCenter, // إلى الأسفل
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
                 colors: [
-                  const Color(0xFF6A5ACD).withOpacity(0.6), // اللون الأزرق الفاتح مع بعض الشفافية
-                  Colors.white.withOpacity(0.9), // التدرج إلى اللون الأبيض مع الشفافية
+                  const Color(0xFF6A5ACD).withOpacity(0.6),
+                  Colors.white.withOpacity(0.9),
                 ],
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(10), // إضافة padding لعزل الحاويات
+              padding: const EdgeInsets.all(10),
               child: TabBarView(
                 children: [
-                  // ✅ Medical Tests
                   GridView.count(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                     children: [
-                      buildCategoryCard(Icons.bloodtype, "Complete Blood Count (CBC)", Colors.red, context, MedicalTestPage(title: "Blood Test")),
-                      buildCategoryCard(Icons.water_drop, "Glucose Test", Colors.white, context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.pregnant_woman, "Pregnancy Test", Colors.pinkAccent, context, MedicalTestPage(title: "DNA Test")),
-                      buildCategoryCard(Icons.vaccines, "Drug Test", Colors.white, context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.water_drop, "Urinalysis", Colors.yellowAccent , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.water_drop, "Kidney Function Test", Color(0xFFFCE77D), context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.coronavirus , "Urine Culture", Color(0xFFFCE77D), context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.male , "Testosterone Test", Colors.blue , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.female , "Estrogen Test", Colors.pinkAccent , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.emoji_objects, "Cortisol Test", Colors.deepOrange , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.coronavirus, "COVID-19 Test", Colors.redAccent , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.coronavirus, "HIV Test", Colors.deepPurple , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.vaccines, "Hepatitis Test", Colors.greenAccent , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.sick, "Tuberculosis (TB) Test", Colors.brown , context, MedicalTestPage(title: "Diabetes Test")),
-                      buildCategoryCard(Icons.monitor_heart, "Cholesterol Test", Colors.orange, context, MedicalTestPage(title: "Diabetes Test")),
+                      buildCategoryCard(Icons.bloodtype, "Complete Blood Count (CBC)", Colors.red, context, MedicalTestPage(title: "(CBC)")),
+                      buildCategoryCard(Icons.water_drop, "Glucose Test", Colors.white, context, MedicalTestPage(title: "Glucose Test")),
+                      buildCategoryCard(Icons.pregnant_woman, "Pregnancy Test", Colors.pinkAccent, context, MedicalTestPage(title: "Pregnancy Test")),
+                      buildCategoryCard(Icons.vaccines, "Drug Test", Colors.white, context, MedicalTestPage(title: "Drug Test")),
+                      buildCategoryCard(Icons.water_drop, "Urinalysis", Colors.yellowAccent , context, MedicalTestPage(title: "Urinalysis")),
+                      buildCategoryCard(Icons.water_drop, "Kidney Function Test", Color(0xFFFCE77D), context, MedicalTestPage(title: "Kidney Function Test")),
                     ],
                   ),
-                  // ✅ X-Ray Scans
                   GridView.count(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
@@ -85,21 +73,6 @@ class MyApp extends StatelessWidget {
                       buildCategoryCard(Icons.radio, "Therapeutic X-Ray", Colors.red, context, XRayPage(title: "Therapeutic X-Ray")),
                       buildCategoryCard(Icons.public, "Environmental X-Ray", Colors.green, context, XRayPage(title: "Environmental X-Ray")),
                       buildCategoryCard(Icons.camera, "Fluoroscopy X-Ray", Colors.yellow, context, XRayPage(title: "Fluoroscopy X-Ray")),
-                      buildCategoryCard(Icons.local_hospital, "Mammography X-Ray", Colors.pink, context, XRayPage(title: "Mammography X-Ray")),
-                      buildCategoryCard(Icons.local_hospital, "Angiography X-Ray", Colors.orange, context, XRayPage(title: "Angiography X-Ray")),
-                      buildCategoryCard(Icons.camera_alt, "Tomography X-Ray (CT Scan)", Colors.cyan, context, XRayPage(title: "Tomography X-Ray (CT Scan)")),
-                      buildCategoryCard(Icons.access_alarm, "Digital X-Ray", Colors.teal, context, XRayPage(title: "Digital X-Ray")),
-                      buildCategoryCard(Icons.ac_unit, "Radiology X-Ray", Colors.indigo, context, XRayPage(title: "Radiology X-Ray")),
-                      buildCategoryCard(Icons.airline_seat_individual_suite, "Orthopedic X-Ray", Colors.lime, context, XRayPage(title: "Orthopedic X-Ray")),
-                      buildCategoryCard(Icons.airplanemode_active, "Chest CT X-Ray", Colors.brown, context, XRayPage(title: "Chest CT X-Ray")),
-                      buildCategoryCard(Icons.all_inbox, "Full Body X-Ray", Colors.deepPurple, context, XRayPage(title: "Full Body X-Ray")),
-                      buildCategoryCard(Icons.alarm, "Abdominal X-Ray", Colors.amber, context, XRayPage(title: "Abdominal X-Ray")),
-                      buildCategoryCard(Icons.animation, "Pelvic X-Ray", Colors.deepOrange, context, XRayPage(title: "Pelvic X-Ray")),
-                      buildCategoryCard(Icons.apps, "Skull X-Ray", Colors.greenAccent, context, XRayPage(title: "Skull X-Ray")),
-                      buildCategoryCard(Icons.backspace, "Spine X-Ray", Colors.lightGreen, context, XRayPage(title: "Spine X-Ray")),
-                      buildCategoryCard(Icons.battery_alert, "Leg X-Ray", Colors.lightBlue, context, XRayPage(title: "Leg X-Ray")),
-                      buildCategoryCard(Icons.beenhere, "Hand X-Ray", Colors.indigoAccent, context, XRayPage(title: "Hand X-Ray")),
-                      buildCategoryCard(Icons.cabin, "Foot X-Ray", Colors.pinkAccent, context, XRayPage(title: "Foot X-Ray")),
                     ],
                   ),
                 ],
@@ -111,13 +84,11 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // ✅ دالة بناء حاوية مع الأيقونة والنص واللون
   Widget buildCategoryCard(IconData icon, String title, Color color, BuildContext context, Widget page) {
     return Builder(
       builder: (BuildContext innerContext) {
         return GestureDetector(
           onTap: () {
-            // ✅ عند الضغط، الانتقال إلى الصفحة الجديدة باستخدام السياق الصحيح
             Navigator.push(
               innerContext,
               MaterialPageRoute(builder: (context) => page),
@@ -158,23 +129,158 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MedicalTestPage extends StatelessWidget {
+class MedicalTestPage extends StatefulWidget {
   final String title;
-
   const MedicalTestPage({Key? key, required this.title}) : super(key: key);
+
+  @override
+  _MedicalTestPageState createState() => _MedicalTestPageState();
+}
+
+class _MedicalTestPageState extends State<MedicalTestPage> {
+  late List<String> fields;
+  final Map<String, TextEditingController> controllers = {};
+
+  @override
+  void initState() {
+    super.initState();
+    switch (widget.title) {
+      case "(CBC)":
+        fields = ["Hemoglobin", "WBC", "RBC", "Platelets"];
+        break;
+      case "Glucose Test":
+        fields = ["Fasting Glucose", "Postprandial Glucose"];
+        break;
+      case "Pregnancy Test":
+        fields = ["hCG Level"];
+        break;
+      case "Kidney Function Test":
+        fields = ["Creatinine", "BUN", "eGFR"];
+        break;
+      default:
+        fields = ["Value 1", "Value 2"];
+    }
+    for (var field in fields) {
+      controllers[field] = TextEditingController();
+    }
+  }
+
+  @override
+  void dispose() {
+    for (var controller in controllers.values) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
+  Future<void> _sendDataToBackend() async {
+    Map<String, dynamic> data = {
+      "testType": widget.title,
+      "values": {
+        for (var field in fields) field: controllers[field]!.text,
+      }
+    };
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultsPage(data: data),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text("Details for $title")),
+      appBar: AppBar(title: Text(widget.title)),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: fields.length,
+                itemBuilder: (context, index) {
+                  final field = fields[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Text(field, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          flex: 3,
+                          child: TextField(
+                            controller: controllers[field],
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              hintText: "Enter value",
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: _sendDataToBackend,
+              icon: const Icon(Icons.send),
+              label: const Text("إرسال البيانات"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurple,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ResultsPage extends StatelessWidget {
+  final Map<String, dynamic> data;
+  const ResultsPage({Key? key, required this.data}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("نتائج الاختبار")),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "اختبار: ${data['testType']}",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ...data['values'].entries.map((entry) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Text("${entry.key}: ${entry.value}"),
+              );
+            }).toList(),
+          ],
+        ),
+      ),
     );
   }
 }
 
 class XRayPage extends StatelessWidget {
   final String title;
-
   const XRayPage({Key? key, required this.title}) : super(key: key);
 
   @override
